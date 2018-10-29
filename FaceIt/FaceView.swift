@@ -65,6 +65,8 @@ class FaceView: UIView {
         return path
     }
     
+    
+    
     private func pathForSkull() -> UIBezierPath {
         let path = UIBezierPath(arcCenter: skullCenter, radius: skullRadius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
         path.lineWidth = 5
