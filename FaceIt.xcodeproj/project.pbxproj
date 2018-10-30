@@ -13,6 +13,7 @@
 		0516E3F2218752C1003E7B00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0516E3F1218752C1003E7B00 /* Assets.xcassets */; };
 		0516E3F5218752C1003E7B00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0516E3F3218752C1003E7B00 /* LaunchScreen.storyboard */; };
 		0516E3FE218753D1003E7B00 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0516E3FD218753D1003E7B00 /* FaceView.swift */; };
+		3B089D7C21882EF0002A0E65 /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B089D7B21882EF0002A0E65 /* FacialExpression.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0516E3F4218752C1003E7B00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0516E3F6218752C1003E7B00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0516E3FD218753D1003E7B00 /* FaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
+		3B089D7B21882EF0002A0E65 /* FacialExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				0516E3FC218752F7003E7B00 /* Supporting Files */,
 				0516E3EC218752BF003E7B00 /* ViewController.swift */,
+				3B089D7B21882EF0002A0E65 /* FacialExpression.swift */,
 				0516E3FD218753D1003E7B00 /* FaceView.swift */,
 				0516E3EE218752BF003E7B00 /* Main.storyboard */,
 			);
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0516E3ED218752BF003E7B00 /* ViewController.swift in Sources */,
+				3B089D7C21882EF0002A0E65 /* FacialExpression.swift in Sources */,
 				0516E3EB218752BF003E7B00 /* AppDelegate.swift in Sources */,
 				0516E3FE218753D1003E7B00 /* FaceView.swift in Sources */,
 			);
