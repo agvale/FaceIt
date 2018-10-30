@@ -8,11 +8,18 @@
 
 import UIKit
 
+@IBDesignable
 class FaceView: UIView {
-
+    @IBInspectable
     var scale: CGFloat = 0.9
-    
-    var eyesOpen: Bool = false
+    @IBInspectable
+    var eyesOpen: Bool = true
+    @IBInspectable
+    var mouthCurvature: Double = 1.0 // 1.0 is full smile and -1.0 is full frown
+    @IBInspectable
+    var lineWidth: CGFloat = 5.0
+    @IBInspectable
+    var color: UIColor = UIColor.blue
     
     private var skullRadius: CGFloat {
         return min(bounds.width, bounds.height) / 2 * scale
@@ -37,8 +44,18 @@ class FaceView: UIView {
             width: mouthWidth,
             height: mouthHeight
         )
-        let path = UIBezierPath(rect: mouthRect)
         
+        let smileOffset = CGFloat(max(-1, min(mouthCurvature, 1))) * mouthRect.height
+        let start = CGPoint(x: mouthRect.minX, y: mouthRect.midY)
+        let end = CGPoint(x: mouthRect.maxX, y: mouthRect.midY)
+        
+        let cp1 = CGPoint(x: start.x + mouthRect.width / 3, y: start.y + smileOffset)
+        let cp2 = CGPoint(x: end.x - mouthRect.width / 3, y: start.y + smileOffset)
+
+        let path = UIBezierPath()
+        path.lineWidth = lineWidth
+        path.move(to: start)
+        path.addCurve(to: end, controlPoint1: cp1, controlPoint2: cp2)
         return path
     }
     
@@ -61,20 +78,18 @@ class FaceView: UIView {
             path.addLine(to: CGPoint(x: eyeCenter.x + eyeRadius, y: eyeCenter.y))
         }
         
-        path.lineWidth = 5.0
+        path.lineWidth = lineWidth
         return path
     }
     
-    
-    
     private func pathForSkull() -> UIBezierPath {
         let path = UIBezierPath(arcCenter: skullCenter, radius: skullRadius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: false)
-        path.lineWidth = 5
+        path.lineWidth = lineWidth
         return path
     }
     
     override func draw(_ rect: CGRect) {
-        UIColor.blue.set()
+        color.set()
         pathForSkull().stroke()
         pathForEye(.left).stroke()
         pathForEye(.right).stroke()
