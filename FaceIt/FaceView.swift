@@ -22,8 +22,6 @@ class FaceView: UIView {
     @IBInspectable
     var color: UIColor = UIColor.blue // 1.0 is full smile and -1.0 is full frown
     
-    
-    
     @objc func changeScale(byReactingTo pinchRecognizer: UIPinchGestureRecognizer) {
         switch pinchRecognizer.state {
         case .ended, .changed:
